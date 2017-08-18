@@ -97,7 +97,7 @@ export default {
       return 'undefined'
     },
     getType(t) {
-      if (typeof(t) === 'undefined') return 'any'
+      if (typeof(t) === 'undefined' || typeof(t) !== "function") return 'any'
       let type = typeof(t())
       if (type === 'object') {
         if (Array.isArray(t())) return 'array'
